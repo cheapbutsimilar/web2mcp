@@ -1,0 +1,51 @@
+{
+  "name": "web2mcp",
+  "version": "0.1.0",
+  "description": "No official API? Record once, get a local MCP server.",
+  "type": "module",
+  "bin": {
+    "web2mcp": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/chmod-bin.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && vitest run",
+    "demo": "node dist/cli.js test",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "playwright",
+    "claude",
+    "cursor",
+    "api",
+    "codegen"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@types/node": "^22.10.0",
+    "commander": "^14.0.0",
+    "playwright": "1.63.0",
+    "typescript": "^5.9.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheapbutsimilar/web2mcp.git"
+  }
+}
